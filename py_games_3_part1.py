@@ -1,26 +1,65 @@
 #This is the main file for Linear Games 3
+import random
 
 #Create matrices variable that contains all if the matrices we want to work upon
 matrices = [
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 0
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 1
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 2
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 3
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 4
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 5
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 6
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 7
-[[0,0,0],[0,0,0],[0,0,0]],#MATRIX 8
 ]
 
+#FUNCITONS******************************************************************************
+def print_matrices(x):
+    # Define the dimensions of the blocks
+
+    for j in range(0,3):
+        print()
+        for h in range(0,3):
+            print(end=" ")
+            for i in range(0,3):
+                print(x[h][j][i], end="")
+    print()
+
+    for j in range(0,3):
+        print()
+        for h in range(3,6):
+            print(end=" ")
+            for i in range(0,3):
+                print(x[h][j][i], end="")
+    print()
+
+    for j in range(0,3):
+        print()
+        for h in range(6,9):
+            print(end=" ")
+            for i in range(0,3):
+                print(x[h][j][i], end="")
+    print()
+
+def print_matrix(matrix):
+    print(matrices[int(matrix)])
+#FUNCITONS******************************************************************************
+
+win = False
+h=0
+i=0
+j=0
+value_range = [0,1,2]
+
+#Fill matrices randomly
+# Fill each matrix with random values
+for i in range(9):
+    matrix = [[random.randint(0, 2) for _ in range(3)] for _ in range(3)]
+    matrices.append(matrix)
+
 #UNTIL WIN
-    #Ask user for which matrix they want to alter
+while not win:
+    #print matrices
+    print_matrices(matrices)
     #Store selected matrix in temp variable
-    
-    #Show selected matrix
-    
+    selected_matrix = input("Which matrix would you like to alter?: ")
+
+    print_matrix(int(selected_matrix)-1)
     #Ask use for which element in that matrix they want to edit
     #Store selected element in temp variable
+    selected_element = input("Which value would you like to press?: ")
     
     #CALL ALTER FUNCTION
     

@@ -84,10 +84,6 @@ def fill_zeros(matrices):
 #FUNCITONS******************************************************************************
         
 def main():
-    win = False
-    h=0
-    i=0
-    j=0
     value_range = [0,1,2]
 
     #ask user to fill in initial state
@@ -95,6 +91,7 @@ def main():
     
     print_matrices(matrices)
     #determine if can reach all off state
+    #Function Here!!!!!!
         #If true, output number of pushes
         #Else, say it cannot be reached
     

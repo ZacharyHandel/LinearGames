@@ -34,7 +34,8 @@ def print_matrices(x):
     print()
 
 def print_matrix(matrix):
-    print(matrices[int(matrix)])
+    for row in matrices[matrix]:
+        print(' '.join(map(str, row)))
 #FUNCITONS******************************************************************************
 
 win = False

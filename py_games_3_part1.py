@@ -38,40 +38,41 @@ def print_matrix(matrix):
         print(' '.join(map(str, row)))
 #FUNCITONS******************************************************************************
 
-win = False
-h=0
-i=0
-j=0
-value_range = [0,1,2]
 
-#Fill matrices randomly
-# Fill each matrix with random values
-for i in range(9):
-    matrix = [[random.randint(0, 2) for _ in range(3)] for _ in range(3)]
-    matrices.append(matrix)
+def main():
+    win = False
+    h=0
+    i=0
+    j=0
+    value_range = [0,1,2]
 
-#UNTIL WIN
-while not win:
-    #print matrices
-    print_matrices(matrices)
-    #Store selected matrix in temp variable
-    selected_matrix = input("Which matrix would you like to alter?: ")
+    #Fill matrices randomly
+    # Fill each matrix with random values
+    for i in range(9):
+        matrix = [[random.randint(0, 2) for _ in range(3)] for _ in range(3)]
+        matrices.append(matrix)
 
-    print_matrix(int(selected_matrix)-1)
-    #Ask use for which element in that matrix they want to edit
-    #Store selected element in temp variable
-    selected_element = input("Which value would you like to press?: ")
+    #UNTIL WIN
+    while not win:
+        #print matrices
+        print_matrices(matrices)
+        #Store selected matrix in temp variable
+        selected_matrix = input("Which matrix would you like to alter?: ")
+
+        print_matrix(int(selected_matrix)-1)
+        #Ask use for which element in that matrix they want to edit
+        #Store selected element in temp variable
+        selected_element = input("Which value would you like to press?: ")
     
-    #CALL ALTER FUNCTION
+        #CALL ALTER FUNCTION
     
-    #SHOW Altered Matrix
+        #SHOW Altered Matrix
     
-    #Loop through all matrices
-        #If all elements are 0
-            #Win!
-        #Else
-            #No win yet
+        #Loop through all matrices
+            #If all elements are 0
+                #Win!
+            #Else
+                #No win yet
     
-    
-    
+main()
     

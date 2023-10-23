@@ -38,7 +38,27 @@ def print_matrix(matrix):
         print(' '.join(map(str, row)))
 #FUNCITONS******************************************************************************
 
+def check_win(matrices):
+    for i in range(9):
+        for j in range(3):
+            for k in range(3):
+                if matrices[i][j][k] != 0:
+                    return False
+    return True
 
+def fill_random(matrices):
+    #Fill matrices randomly
+    # Fill each matrix with random values
+    for i in range(9):
+        matrix = [[random.randint(0, 2) for _ in range(3)] for _ in range(3)]
+        matrices.append(matrix)
+
+def fill_zeros(matrices):
+    for i in range(9):
+        matrix = [[0 for _ in range(3)] for _ in range(3)]
+        matrices.append(matrix)
+
+        
 def main():
     win = False
     h=0
@@ -46,11 +66,8 @@ def main():
     j=0
     value_range = [0,1,2]
 
-    #Fill matrices randomly
-    # Fill each matrix with random values
-    for i in range(9):
-        matrix = [[random.randint(0, 2) for _ in range(3)] for _ in range(3)]
-        matrices.append(matrix)
+    fill_random(matrices)
+    #fill_zeros(matrices)
 
     #UNTIL WIN
     while not win:
@@ -64,6 +81,7 @@ def main():
         #Store selected element in temp variable
         selected_element = input("Which value would you like to press?: ")
     
+        print(check_win(matrices))
         #CALL ALTER FUNCTION
     
         #SHOW Altered Matrix

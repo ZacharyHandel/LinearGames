@@ -34,7 +34,7 @@ while not done:
                 bulb[1] = 0
         print("New state: ", bulb)
         
-    if user_input == 'B':
+    elif user_input == 'B':
         if bulb[1] < 2:
             bulb[1] = bulb[1]+1    
         elif bulb[1] == 2:
@@ -52,7 +52,7 @@ while not done:
         
         print("New state: ", bulb)
         
-    if user_input == 'C':
+    elif user_input == 'C':
         if bulb[2] < 2:
             bulb[2] = bulb[2]+1 
         elif bulb[2] == 2:

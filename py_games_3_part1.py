@@ -57,8 +57,220 @@ def fill_zeros(matrices):
     for i in range(9):
         matrix = [[0 for _ in range(3)] for _ in range(3)]
         matrices.append(matrix)
-
         
+def alter_matrix(matrix_num, element_num):
+    #print (matrices[matrix_num])
+    #print (matrices[matrix_num][0][element_num])
+    print(matrices[matrix_num][1][0])
+    if element_num >= 0 and element_num <=2:
+        #row1
+        #print("row 1")
+        
+        #element 1 is pressed
+        if element_num == 0:
+            num = matrices[matrix_num][0][element_num] + 1
+            num2 = matrices[matrix_num][0][1] + 1
+            num3 = matrices[matrix_num][1][0] + 1
+            num4 = matrices[matrix_num][1][1] + 1
+            
+            if num > 2:
+                matrices[matrix_num][0][element_num] = 0
+            else:
+                matrices[matrix_num][0][element_num] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][1] = 0
+            else:
+                matrices[matrix_num][0][1] += 1
+            if num3 > 2:
+                matrices[matrix_num][1][0] = 0
+            else:
+                matrices[matrix_num][1][0] += 1
+            if num4 > 2:
+                matrices[matrix_num][1][1] = 0
+            else:
+                matrices[matrix_num][1][1] += 1
+        #element 2 is pressed
+        if element_num == 1:
+            num = matrices[matrix_num][0][element_num] + 1
+            num2 = matrices[matrix_num][0][0] + 1
+            num3 = matrices[matrix_num][0][2] + 1
+            
+            
+            if num > 2:
+                matrices[matrix_num][0][element_num] = 0
+            else:
+                matrices[matrix_num][0][element_num] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][0] = 0
+            else:
+                matrices[matrix_num][0][0] += 1
+            if num3 > 2:
+                matrices[matrix_num][0][2] = 0
+            else:
+                matrices[matrix_num][0][2] += 1
+        #element 3 is pressed
+        if element_num == 2:
+            num = matrices[matrix_num][0][element_num] + 1
+            num2 = matrices[matrix_num][0][1] + 1
+            num3 = matrices[matrix_num][1][1] + 1
+            num4 = matrices[matrix_num][1][2] + 1
+            
+            if num > 2:
+                matrices[matrix_num][0][element_num] = 0
+            else:
+                matrices[matrix_num][0][element_num] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][1] = 0
+            else:
+                matrices[matrix_num][0][1] += 1
+            if num3 > 2:
+                matrices[matrix_num][1][1] = 0
+            else:
+                matrices[matrix_num][1][1] += 1
+            if num4 > 2:
+                matrices[matrix_num][1][2] = 0
+            else:
+                matrices[matrix_num][1][2] += 1
+    elif element_num >= 3 and element_num <=5: 
+        #row2
+        #print("row 2")
+        #element 4 is pressed
+        if element_num == 3:
+            num = matrices[matrix_num][1][0] + 1
+            num2 = matrices[matrix_num][0][0] + 1
+            num3 = matrices[matrix_num][2][0] + 1
+            
+            
+            if num > 2:
+                matrices[matrix_num][1][0] = 0
+            else:
+                matrices[matrix_num][1][0] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][0] = 0
+            else:
+                matrices[matrix_num][0][0] += 1
+            if num3 > 2:
+                matrices[matrix_num][2][0] = 0
+            else:
+                matrices[matrix_num][2][0] += 1
+            
+        #element 5 is pressed
+        if element_num == 4:
+            num = matrices[matrix_num][1][1] + 1
+            num2 = matrices[matrix_num][0][1] + 1
+            num3 = matrices[matrix_num][1][0] + 1
+            num4 = matrices[matrix_num][1][2] + 1
+            num5 = matrices[matrix_num][2][1] + 1
+            
+            
+            if num > 2:
+                matrices[matrix_num][1][1] = 0
+            else:
+                matrices[matrix_num][1][1] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][1] = 0
+            else:
+                matrices[matrix_num][0][1] += 1
+            if num3 > 2:
+                matrices[matrix_num][1][0] = 0
+            else:
+                matrices[matrix_num][1][0] += 1
+            if num4 > 2:
+                matrices[matrix_num][1][2] = 0
+            else:
+                matrices[matrix_num][1][2] += 1
+            if num5 > 2:
+                matrices[matrix_num][2][1] = 0
+            else:
+                matrices[matrix_num][2][1] += 1
+        #element 6 is pressed
+        if element_num == 5:
+            num = matrices[matrix_num][1][2] + 1
+            num2 = matrices[matrix_num][0][2] + 1
+            num3 = matrices[matrix_num][2][2] + 1
+            
+            if num > 2:
+                matrices[matrix_num][1][2] = 0
+            else:
+                matrices[matrix_num][1][2] += 1
+            if num2 > 2:
+                matrices[matrix_num][0][2] = 0
+            else:
+                matrices[matrix_num][0][2] += 1
+            if num3 > 2:
+                matrices[matrix_num][2][2] = 0
+            else:
+                matrices[matrix_num][2][2] += 1
+    else:
+        print("row 3")
+        #row3
+        #element 7 is pressed
+        if element_num == 6:
+            num = matrices[matrix_num][2][0] + 1
+            num2 = matrices[matrix_num][1][0] + 1
+            num3 = matrices[matrix_num][1][1] + 1
+            num4 = matrices[matrix_num][2][1] + 1
+            
+            
+            if num > 2:
+                matrices[matrix_num][2][0] = 0
+            else:
+                matrices[matrix_num][2][0] += 1
+            if num2 > 2:
+                matrices[matrix_num][1][0] = 0
+            else:
+                matrices[matrix_num][1][0] += 1
+            if num3 > 2:
+                matrices[matrix_num][1][1] = 0
+            else:
+                matrices[matrix_num][1][1] += 1
+            if num4 > 2:
+                matrices[matrix_num][2][1] = 0
+            else:
+                matrices[matrix_num][2][1] += 1
+            
+        #element 8 is pressed
+        if element_num == 7:
+            num = matrices[matrix_num][2][1] + 1
+            num2 = matrices[matrix_num][2][0] + 1
+            num3 = matrices[matrix_num][2][2] + 1
+            
+            if num > 2:
+                matrices[matrix_num][2][1] = 0
+            else:
+                matrices[matrix_num][2][1] += 1
+            if num2 > 2:
+                matrices[matrix_num][2][0] = 0
+            else:
+                matrices[matrix_num][2][0] += 1
+            if num3 > 2:
+                matrices[matrix_num][2][2] = 0
+            else:
+                matrices[matrix_num][2][2] += 1
+            
+        #element 9 is pressed
+        if element_num == 8:
+            num = matrices[matrix_num][2][2] + 1
+            num2 = matrices[matrix_num][2][1] + 1
+            num3 = matrices[matrix_num][1][1] + 1
+            num4 = matrices[matrix_num][1][2] + 1
+            
+            if num > 2:
+                matrices[matrix_num][2][2] = 0
+            else:
+                matrices[matrix_num][2][2] += 1
+            if num2 > 2:
+                matrices[matrix_num][2][1] = 0
+            else:
+                matrices[matrix_num][2][1] += 1
+            if num3 > 2:
+                matrices[matrix_num][1][1] = 0
+            else:
+                matrices[matrix_num][1][1] += 1
+            if num4 > 2:
+                matrices[matrix_num][1][2] = 0
+            else:
+                matrices[matrix_num][1][2] += 1
 def main():
     win = False
     h=0
@@ -80,6 +292,7 @@ def main():
         #Ask use for which element in that matrix they want to edit
         #Store selected element in temp variable
         selected_element = input("Which value would you like to press?: ")
+        alter_matrix(int(selected_matrix)-1, int(selected_element)-1)
     
         print(check_win(matrices))
         #CALL ALTER FUNCTION

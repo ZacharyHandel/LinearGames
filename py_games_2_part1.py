@@ -67,10 +67,10 @@ while not done:
     else:
         print("Invalid choice, please enter A, B, or C")
 
-    check = input("Would you like to go again?(y/n)")
-    if check == 'yes' or "y":
+    check = input("Would you like to go again? (yes/y or no/n): ")
+    if check.lower() in ['yes', 'y']:
         done = False
-    if check == "no" or "n":
+    elif check.lower() in ['no', 'n']:
         done = True
     else:
-        print("Invalid response, please enter yes(y) or no(n).")
+        print("Invalid response, please enter yes/y or no/n.")

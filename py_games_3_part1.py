@@ -287,13 +287,24 @@ def main():
         #print matrices
         print_matrices(matrices)
         #Store selected matrix in temp variable
-        selected_matrix = input("Which matrix would you like to alter?: ")
-
-        print_matrix(int(selected_matrix)-1)
+        try:
+            selected_matrix = int(input("Which matrix would you like to alter?: "))
+            if 1 <= selected_matrix <=9:
+                print_matrix(int(selected_matrix)-1)
+                try:
+                    selected_element = int(input("Which value would you like to press?: "))
+                    if 1 <= selected_element <=9:
+                        alter_matrix(int(selected_matrix)-1, int(selected_element)-1)
+                    else:
+                        print("Please input an integer between 1-9")
+                except ValueError:
+                    print("Please input an integer between 1-9")
+            else:
+                print("Please input an integer between 1-9")
+        except ValueError:
+            print("Please input an integer between 1-9")
         #Ask use for which element in that matrix they want to edit
         #Store selected element in temp variable
-        selected_element = input("Which value would you like to press?: ")
-        alter_matrix(int(selected_matrix)-1, int(selected_element)-1)
     
         #print(check_win(matrices))
         #CALL ALTER FUNCTION

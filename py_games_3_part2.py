@@ -26,7 +26,7 @@ def input_matrix(matrix):
                             matrix[i][j][k] = value
                             break
                         else:
-                            print("PLease input an integer between 0-2")
+                            print("Please input an integer between 0-2")
                     except ValueError:
                         print("Please input an integer between 0-2")
 

@@ -84,7 +84,7 @@ def fill_zeros(matrices):
 
 def solvable(matrix):
     value = 0
-    presses_needed = []
+    presses_needed = [0,0,0,0,0,0,0,0,0]
     possible_presses = [[1,1,0,1,1,0,0,0,0],
                         [1,1,1,0,0,0,0,0,0],
                         [0,1,1,0,1,1,0,0,0],
@@ -102,13 +102,16 @@ def solvable(matrix):
 
             # Use these indices to access the elements in 'matrix' and 'possible_presses'
             value += matrix[matrix_row][matrix_col] * possible_presses[h][i]
+            value_modded = value % 3
+            presses_needed[i] += value_modded
             #print(f"matrix[{matrix_row}][{matrix_col}] * pp[{h}][{i}] = {value}")
 
+    for i in range(9):
+        presses_needed[i] = presses_needed[i]%3
     #print(f"Value: {value}")
-    value_modded = value % 3
     #print(f"Value after mod: {value}")
     if value_modded == 0:
-        return value
+        return presses_needed
     else:
         return -1
 
@@ -127,14 +130,14 @@ def main():
 
     for i in range(9):
         solvable_value = solvable(matrices[i])
-        if(solvable_value > -1):
+        if(solvable_value != -1):
             number_of_presses_per_matrix.append(solvable_value)
             number_of_solvable += 1
 
     if number_of_solvable < 8:
         print("We cannot reach the 'all off state.'")
     else:
-        print(f"Number of presses per matrix (1-9): {number_of_presses_per_matrix}")
+        print(f"Number of presses per box (array 1-9): {number_of_presses_per_matrix}")
         print("We can reach the 'all off state.'")
 
     #determine if can reach all off state

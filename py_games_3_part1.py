@@ -61,7 +61,7 @@ def fill_zeros(matrices):
 def alter_matrix(matrix_num, element_num):
     #print (matrices[matrix_num])
     #print (matrices[matrix_num][0][element_num])
-    print(matrices[matrix_num][1][0])
+    #print(matrices[matrix_num][1][0])
     if element_num >= 0 and element_num <=2:
         #row1
         #print("row 1")
@@ -295,7 +295,7 @@ def main():
         selected_element = input("Which value would you like to press?: ")
         alter_matrix(int(selected_matrix)-1, int(selected_element)-1)
     
-        print(check_win(matrices))
+        #print(check_win(matrices))
         #CALL ALTER FUNCTION
     
         #SHOW Altered Matrix
@@ -305,6 +305,11 @@ def main():
                 #Win!
             #Else
                 #No win yet
+        if check_win(matrices) == True:
+            print("Win!")
+            return win
+        else:
+            print("No win yet")
     
 main()
     

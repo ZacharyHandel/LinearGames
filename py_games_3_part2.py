@@ -108,29 +108,33 @@ def solvable(matrix):
     value_modded = value % 3
     #print(f"Value after mod: {value}")
     if value_modded == 0:
-        print(f"Number of presses needed: {value}")
-        return True
+        return value
     else:
-        return False
+        return -1
 
 #FUNCITONS******************************************************************************
         
 def main():
     value_range = [0,1,2]
     number_of_solvable = 0
+    number_of_presses_per_matrix = []
     #ask user to fill in initial state
+    print("***The values coordinate to the following: 0=off, 1=red, 2=green***")
+
     input_matrix(matrices)
     
     print_matrices(matrices)
 
     for i in range(9):
-        if(solvable(matrices[i])):
-            print(f"For matrix {i+1}^^^ ")
+        solvable_value = solvable(matrices[i])
+        if(solvable_value > -1):
+            number_of_presses_per_matrix.append(solvable_value)
             number_of_solvable += 1
 
     if number_of_solvable < 8:
         print("We cannot reach the 'all off state.'")
     else:
+        print(f"Number of presses per matrix (1-9): {number_of_presses_per_matrix}")
         print("We can reach the 'all off state.'")
 
     #determine if can reach all off state

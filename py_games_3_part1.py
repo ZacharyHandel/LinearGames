@@ -271,6 +271,7 @@ def alter_matrix(matrix_num, element_num):
                 matrices[matrix_num][1][2] = 0
             else:
                 matrices[matrix_num][1][2] += 1
+
 def main():
     win = False
     h=0

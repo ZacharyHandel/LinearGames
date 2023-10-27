@@ -81,15 +81,58 @@ def fill_zeros(matrices):
     for i in range(9):
         matrix = [[0 for _ in range(3)] for _ in range(3)]
         matrices.append(matrix)
+
+def solvable(matrix):
+    value = 0
+    presses_needed = []
+    possible_presses = [[1,1,0,1,1,0,0,0,0],
+                        [1,1,1,0,0,0,0,0,0],
+                        [0,1,1,0,1,1,0,0,0],
+                        [1,0,0,1,0,0,1,0,0],
+                        [0,1,0,1,1,1,0,1,0],
+                        [0,0,1,0,0,1,0,0,1],
+                        [0,0,0,1,1,0,1,1,0],
+                        [0,0,0,0,0,0,1,1,1],
+                        [0,0,0,0,1,1,0,1,1]]
+    
+    for h in range(9):
+        for i in range(9):
+            matrix_row = i // 3  # Calculate the row index in the 'matrix' array
+            matrix_col = i % 3   # Calculate the column index in the 'matrix' array
+
+            # Use these indices to access the elements in 'matrix' and 'possible_presses'
+            value += matrix[matrix_row][matrix_col] * possible_presses[h][i]
+            #print(f"matrix[{matrix_row}][{matrix_col}] * pp[{h}][{i}] = {value}")
+
+    #print(f"Value: {value}")
+    value_modded = value % 3
+    #print(f"Value after mod: {value}")
+    if value_modded == 0:
+        print(f"Number of presses needed: {value}")
+        return True
+    else:
+        return False
+
 #FUNCITONS******************************************************************************
         
 def main():
     value_range = [0,1,2]
-
+    number_of_solvable = 0
     #ask user to fill in initial state
     input_matrix(matrices)
     
     print_matrices(matrices)
+
+    for i in range(9):
+        if(solvable(matrices[i])):
+            print(f"For matrix {i+1}^^^ ")
+            number_of_solvable += 1
+
+    if number_of_solvable < 8:
+        print("We cannot reach the 'all off state.'")
+    else:
+        print("We can reach the 'all off state.'")
+
     #determine if can reach all off state
     #Function Here!!!!!!
         #If true, output number of pushes
